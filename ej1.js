@@ -51,18 +51,3 @@ fs.readFile(peopleFile, 'utf-8',(err, dataPeople) => {
     })
   });
 });
-
-/*
-fs.readFile(filmsFile, 'utf-8', (err,data) => {
-    if(err){
-        return console.log('no se pudo leer el archivo ../data/films.json');
-    }
-    try{
-        films = JSON.parse(data);
-        
-    }catch(err){
-        return console.log('esto no es un json');
-    }
-});
-*/
-
