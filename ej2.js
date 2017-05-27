@@ -5,8 +5,8 @@
 *2) Crear una función (writeJSON) para convenrtir objeto a JSON y grabarlo en un archivo.
 */
 const fs = require('fs');
-const pathPeople = '../data/people.json';
-const pathFilms = '../data/films.json';
+const pathPeople = './data/people.json';
+const pathFilms = './data/films.json';
 const writeFile = 'ej2.json';
 
 function leerJSON(path, callback){

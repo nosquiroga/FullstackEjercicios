@@ -8,46 +8,43 @@
 */
 
 const fs = require('fs');
-const peopleFile = '../data/people.json';
-const filmsFile = '../data/films.json';
+const peopleFile = './data/people.json';
+const filmsFile = './data/films.json';
 const writeFile = 'ej1.json';
 
-fs.readFile(peopleFile, 'utf-8',(err, dataPeople) => {
+fs.readFile(peopleFile, 'utf-8', (err, dataPeople) => {
   if (err) {
-    return console.log('No se pudo leer el archivo ../data/people.json');
+    return console.log(`No se pudo leer el archivo ${peopleFile}`);
   }
 
-  let people=[];
-  try{
+  try {
     people = JSON.parse(dataPeople);
-    
-  }catch(err){
-    return console.log('esto no es un json');
+  } catch (err) {
+    return console.log(`No se pudo parsear el archivo ${peopleFile}`);
   }
 
   const luke = people.find(character => character.id === '1'); //dentro del file se recorren los objetos y devuelve el objeto. Cuando lo encuentra hace break 
-  const filmsIds = luke.films;
-  
-  fs.readFile(filmsFile, 'utf-8', (err,dataFilms) => {
-    if(err){
-        return console.log('no se pudo leer el archivo ../data/films.json');
+  console.log(luke);
+  fs.readFile(filmsFile, 'utf-8', (err, dataFilms) => {
+    if (err) {
+      return console.log('no se pudo leer el archivo ../data/films.json');
     }
-    try{
-        films = JSON.parse(dataFilms);        
-    }catch(err){
-        return console.log('esto no es un json');
+    try {
+      filmes = JSON.parse(dataFilms);
+    } catch (err) {
+      return console.log('esto no es un json');
     }
 
-    const lukeFilms = films.filter(film => luke.films.includes(film.id)).map(film => film.title);
+    const lukeFilms = filmes.filter(film => luke.films.includes(film.id)).map(film => film.title);
 
     //console.log(lukeFilms.join(', '));
 
     fs.writeFile(writeFile, JSON.stringify(lukeFilms), (err) => {
-        if(err){
-            return console.log("Hubo un error al guardar");
-        }
+      if (err) {
+        return console.log("Hubo un error al guardar");
+      }
 
-        console.log('Se guardo correctamente.')
-    })
+      console.log('Se guardo correctamente.')
+    });
   });
 });
