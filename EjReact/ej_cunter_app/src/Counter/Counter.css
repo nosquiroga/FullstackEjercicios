@@ -1,0 +1,8 @@
+.Counter {
+  display: flex;
+  flex-direction: column;
+}
+
+.Counter-remove {
+  padding: 10px;
+}

@@ -19,8 +19,8 @@ const Product = ({name, price, desc, reviews}) => (
                     <h4><a href="#">{name}</a></h4>
                     <p>See more snippets like these online store reviews at <a href="http://bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
                     <p>Want to make these reviews work? Check out
-                    <strong><a href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/">this building a review system tutorial</a>
-                    </strong>over at maxoffsky.com!</p>
+                    <strong><a href="http://maxoffsky.com/code-blog/laravel-shop-tutorial-1-building-a-review-system/"> this building a review system tutorial</a>
+                    </strong> over at maxoffsky.com!</p>
                     <p>{desc}</p>
                 </div>
             </div>
